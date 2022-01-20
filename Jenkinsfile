@@ -9,14 +9,14 @@ pipeline {
 		}
         stage ("Build") {
             steps {
-		bat "docker build -t test4:latest ."
-		bat "docker tag test4:latest pdtien19/test4:latest"
+		bat "docker build -t test5:latest ."
+		bat "docker tag test5:latest pdtien19/test5:latest"
             }
         }
         stage ("Publish") {
             steps {
                 withDockerRegistry(credentialsId: 'docker-hub', url: 'https://index.docker.io/v1/'){
-                    bat 'docker push pdtien19/test4:latest'
+                    bat 'docker push pdtien19/test5:latest'
             }
         }
         }
