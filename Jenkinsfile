@@ -15,7 +15,7 @@ pipeline {
         }
         stage ("Publish") {
             steps {
-                withDockerRegistry(credentialsId: 'docker-hub', url: ''){
+                withDockerRegistry(credentialsId: 'docker-hub', url: 'https://index.docker.io/v1/'){
                     bat 'docker push pdtien19/test4:latest'
             }
         }
